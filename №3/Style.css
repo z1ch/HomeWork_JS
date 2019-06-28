@@ -1,0 +1,12 @@
+body {
+	width : 1200px;
+	height: 2000px;
+	margin: 0 auto;
+}
+
+button {
+	height          : 30px;
+	background-color: black;
+	border          : none;
+	color           : white;
+}

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS#1</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <h1>Домашнееу задание к 1 уроку</h1>
+    <h3>Задание № 1</h3>
+    <p>Задать температуру в градусах по Цельсию. Вывести в alert соответствующую температуру в градусах по Фаренгейту. Подсказка: расчет идет по формуле Tf = (9 / 5) * Tc + 32, где Tf — температура по Фаренгейту, Tc — по Цельсию</p>
+    <button onclick="task1 ()">Выполнить</button>
+    <h3>Задание № 2</h3>
+    <p>Объявить две переменные: admin и name. Записать в name строку "Василий"; Скопировать значение из name в admin. Вывести admin (должно вывестись «Василий»).
+    </p>
+    <button onclick="task2 ()">Выполнить</button>
+    <h3>Задание № 3</h3>
+    <p>Чему будет равно JS-выражение 1000 + "108"?</p>
+    <button onclick="task3 ()">Выполнить</button>
+    <script>
+        //№ 1
+        function task1() {
+            console.log(`Температура по Фаренгейту = ${prompt ('Привет! Какую температуру нужно расчитать по Фаренгейту?') * (9/5) + 32}`);
+        }
+        //№ 2
+        function task2() {
+            var name = 'Василий';
+            var admin = name;
+            console.log(admin);
+        }
+        //№ 3
+        function
+        task3() {
+            var number = 1000;
+            var string = '108';
+            console.log(number + string); // Ответ: 1000108, те строка
+        }
+    </script>
+</body>
+</html>

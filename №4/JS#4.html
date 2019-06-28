@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+	
+<h1>Домашнее задание к 4 уроку</h1>
+
+	<h3>Задание № 1 <br> Написать функцию, преобразующую число в объект. Передавая на вход число от 0 до 999, мы должны получить на выходе объект, в котором в соответствующих свойствах описаны единицы, десятки и сотни. Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}. Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.</h3>
+	<button onclick="task1 ()">Выполнить</button>
+
+	<h3>Задание № 2 <br> Продолжить работу с интернет-магазином: <br>
+		В прошлом домашнем задании вы реализовали корзину на базе массивов. Какими объектами можно заменить их элементы?  <br>
+		Реализуйте такие объекты. <br>
+		Перенести функционал подсчета корзины на объектно-ориентированную базу.</h3>
+	<button onclick="task2 ()">Выполнить</button>
+
+	<h3>Задание № 3 <br> Раз мы умеем удобно хранить состояние, то можем реализовать текстовый квест, где будем
+		общаться с игроком посредством текста. Этот жанр требует мало ресурсов, поэтому развивается с
+		момента появления компьютерных игр — с 1975 года. <br>
+		Реализуем игру в консоли. Алгоритм будет таким: <br>
+		1. Браузер приглашает пользователя к игре. <br>
+		2. Выводится текущее состояние. <br>
+		3. Выводится предложение о ходе. <br>
+		4. Пользователь вводит действие. <br>
+		5. В зависимости от действия генерируется следующий шаг. <br> </h3>
+	<button onclick="task3 ()">Выполнить</button>
+
+	<script>
+
+		function task1() {
+			var number = +prompt('Введите число :)');
+			var numberObject = {
+				units: 0,
+				tens: 0,
+				hundreds: 0
+			}
+			
+			if (number <= 999) {
+				numberObject.units = Math.floor(number % 10);
+				numberObject.tens = Math.floor((number / 10) % 10);
+				numberObject.hundreds = Math.floor((number / 100) % 10);
+			} else {
+				console.log ('Нужно ввести число от 0 до 999')
+			}
+			
+			console.log (numberObject)
+		}
+
+		function task2() {
+			var basket = {
+				item_1: 'Курица',
+				priseItem_1: 10,
+				item_2: 'Говядина',
+				priseItem_2: 15,
+				item_3: 'Свинина',
+				priseItem_3: 20,
+				}
+				var sum = basket.priseItem_1 + basket.priseItem_2 + basket.priseItem_3;
+				console.log(sum);
+		}  
+
+		function task3 () {
+			
+			var words = ["собака", "кошка", "попугай", "черепаха", 'яблоко', 'вишня'];
+            //Число попыток
+            var lives = 10;
+            // Выбор случайаного слова
+            var word = words[Math.floor(Math.random() * words.length)];
+            // Массив ответа
+            var answerArray = [];
+            for (var i = 0; i < word.length; i++) {
+                answerArray[i] = "_";
+            }
+            var remainingLetters = word.length;
+            var hint = ['животное', 'фрукт'];
+            if (word == words[0] || word == words[1] || word == words[2] || word == words[3]) {
+                var rtr = hint[0];
+            }
+            else {
+                var rtr = hint[1];
+            }
+            console.log('Вам предстоит сыграть в игру :). Вот вам подсказка, это - ' + rtr)
+                // Цикл игры
+            while (remainingLetters > 0 && lives > 0) {
+                // Слово с отгаданными буквами
+                console.log(answerArray.join(" "));
+                // Ход игрока
+                var guess = prompt("Назовите букву или закончите игру. Осторожно у вас " + lives + " попыток!").toLowerCase();
+                lives--;
+                if (guess === null) {
+                    // Выход из игры
+                    break;
+                }
+                else if (guess.length !== 1) {
+                    console.log("Пожалуйста, введите одну букву!");
+                    //Вернем попытку
+                    lives++
+                }
+                else {
+                    // Обновление состояния игры
+                    for (var j = 0; j < word.length; j++) {
+                        if (word[j] === guess && answerArray[j] == '_') {
+                            answerArray[j] = guess;
+                            remainingLetters--;
+                            lives++;
+                        }
+                    }
+                }
+                // Конец игры
+            }
+            // Вывод слово и поздравление игрока
+            if (lives > 0) {
+                console.log(answerArray.join(" "));
+                console.log("Отлично! Ваш ответ " + word + '. Осталось попыток ' + lives);
+            }
+            else {
+                console.log('К сожалению у вас кончились попытки :(. Начинте игру вновь.');
+            }
+		}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+	<h1>Домашнее задание к 3 уроку</h1>
+
+	<h3>Задание № 1 <br> С помощью цикла while вывести все простые числа в промежутке от 0 до 100</h3>
+	<button onclick="task1 ()">Выполнить</button>
+
+	<h3>Задание № 2 и 3 <br> С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров. <br> Товары в корзине хранятся в массиве. Задачи: <br> a) Организовать такой массив для хранения товаров в корзине; <br> b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.</h3>
+	<button onclick="task2 ()">Выполнить</button>
+
+	<h3>Задание № 4 <br> Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:</h3>
+	<button onclick="task4 ()">Выполнить</button>
+
+
+	<h3>Задание № 5 <br> Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов:</h3>
+	<button onclick="task5 ()">Выполнить</button>
+	<script>
+
+		function task1() {
+
+		}
+
+		function task2() {
+			  var priceItems = [];
+			var numberItems = 5;
+			  var itemNumber = 0;
+			while (itemNumber <= numberItems) {
+				itemNumber++;
+				priceItems.push(itemNumber);
+			}
+			console.log(priceItems)
+			var price = 0;
+			for (var i = 0; i < priceItems.length; i++) {
+				price = price + parseInt(priceItems[i]);
+			}
+			console.log(price + '$');
+		}
+
+		function task4 () {
+			for (var i = 0; i < 10; console.log(i++));
+		}
+
+		function task5 () {
+			for (var str = 'x', i = 1; i <= 20; i++) {
+
+				console.log(str.repeat(i));
+			}
+		}
+
+
+
+	</script>
+</body>
+</html>

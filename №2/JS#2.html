@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS#2</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <h1>Домашнее задание ко 2 уроку</h1>
+
+    <h3>Задание № 1 <br> Почему код даёт именно такие результаты?</h3>
+    <p>
+        var a = 1, b = 1, c, d; <br>
+        c = ++a; alert(c); // 2 <br>
+        d = b++; alert(d); // 1 <br>
+        c = (2+ ++a); alert(c); // 5 <br>
+        d = (2+ b++); alert(d); // 4 <br>
+        alert(a); // 3 <br>
+        alert(b); // 3
+    </p>
+    <button onclick="task1 ()">Выполнить</button>
+
+    <h3>Задание № 2 <br> Чему будет равен x в примере ниже?</h3>
+    <p>
+        var a = 2;
+        var x = 1 + (a *= 2);
+    </p>
+    <button onclick="task2 ()">Выполнить</button>
+
+    <h3>Задание № 3 <br> Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:</h3>
+    <p>
+        если a и b положительные, вывести их разность;
+        если а и b отрицательные, вывести их произведение;
+        если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+    </p>
+    <button onclick="task3 ()">Выполнить</button>
+
+    <h3>Задание № 4 <br> Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.</h3>
+    <button onclick="task4 ()">Выполнить</button>
+
+    <h3>Задание № 5 <br> Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return. </h3>  
+    <button onclick="task5 ()">Выполнить</button>
+
+    <h3>Задание № 6 <br> Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).</h3>
+    <button onclick="task6 ()">Выполнить</button>
+    
+    <h3>Задание № 7 <br> *Сравнить null и 0. Попробуйте объяснить результат.</h3>
+    <button onclick="task7 ()">Выполнить</button>
+
+    <h3>Задание № 8 <br> *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.</h3>  
+    <button onclick="task8 ()">Выполнить</button>
+    
+    <script>
+
+        function task1() {
+            console.log('В первой строчке сначала происходит инкрементирование, затем присваивание. Во второй, сначала - присваивание, затем - инкрементирование. В третьей, сначала - инкрементирование, тк порядок выше, затем - сложение, и после - присваивание. В четвертой, сначала - сложение, затем присваивание, после - инкрементирование')
+        }
+
+        function task2() {
+            var a = 2;
+            var x = 1 + (a *= 2);
+            console.log(x); // 5
+        }
+
+        
+        function task3() {
+            var a = prompt ('Введите число а: ');
+            var b = prompt ('Введите число b: ');
+            if ( a >= 0 && b >= 0) {
+                console.log (a - b)
+            } else if ( a < 0 && b < 0) {
+                console.log (a  * b)
+            } else { 
+                console.log (parseInt(a) + parseInt(b))
+            }
+        }
+
+        function task4 () {
+            var a = Math.round (Math.random () * 15)
+            switch (a) {
+                case 0:
+                console.log (0);
+                case 1:
+                console.log (1);
+                case 2:
+                console.log (2);
+                case 3:
+                console.log (3);
+                case 4:
+                console.log (4);
+                case 5:
+                console.log (5);
+                case 6:
+                console.log (6);
+                case 7:
+                console.log (7);
+                case 8:
+                console.log (8);
+                case 9:
+                console.log (9);
+                case 10:
+                console.log (10);
+                case 11:
+                console.log (11);
+                case 12:
+                console.log (12);
+                case 13:
+                console.log (13);
+                case 14:
+                console.log (14);
+                case 15:
+                console.log (15);
+            }
+        }
+
+        function task5 () {
+            function task_5 (x, y) {
+            a = x * y;
+            b = x / y;
+            c = x + y;
+            d = x - y;
+            return (a);
+            return (b);
+            return (c);
+            return (d);
+            }
+
+            task_5 (1, 2);
+            console.log (a);
+            console.log (b);
+            console.log (c);
+            console.log (d);
+        }
+        
+        function task6 () {
+            function mathOperation(arg1, arg2, operation) {
+                var arg1 = prompt ('Введите число А: ');
+                var arg2 = prompt ('Введите число B: ');
+                var operation = prompt ('Введите операцию: ');
+                switch (operation) {
+                    case '+' :
+                    console.log (parseInt(arg1) + parseInt(arg2));
+                    break;
+                    case '-' :
+                    console.log (parseInt(arg1) - parseInt(arg2));
+                    break;
+                    case '*' :
+                    console.log (parseInt(arg1) * parseInt(arg2));
+                    break;
+                    case '/' :
+                    console.log (parseInt(arg1) / parseInt(arg2));
+                    break;
+                }
+            }
+            mathOperation ()
+        }
+
+        function task7 () {
+            a = 0;
+            b = null;
+            console.log (a == b);
+            console.log (a != b);
+            console.log ('В операнде а у нас число 0, а в опернаде b у нас null. null имеет значение "ничего" или "значение неизвестно"');
+        }
+
+        function task8 () {
+            function power(val, pow) {
+                if (pow != 1) {
+                    return val * power(val, pow - 1);
+                } else {
+                    return val;
+                }
+            } console.log(power (5, 3))
+            
+        } 
+
+    </script>
+</body>
+
+</html>

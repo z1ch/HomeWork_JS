@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+	
+<h1>Домашнее задание к 4 уроку</h1>
+
+	<h3>Задание № 1 <br>  Есть кнопка button рядом с ней есть текст (Hello) необходимо при нажатии на кнопку поменять текст кнопки на (Привет)</h3>
+	<button id="hello" onclick="task1 ()">Hello</button>
+	
+	<h3>Задание № 2 <br> Есть кнопка button рядом с ней есть тэг b (Hello) необходимо при нажатии на кнопку поменять тэг на h3</h3>
+	<button id="b3" onclick="task2 ()">Выполнить</button>  <div id="div"><b id="b">Hello</b></div>
+
+	<h3>Задание № 3 <br> 
+		Дан код 
+	<h2>Заголовок.</h2>
+	<ul>
+	<li>list</li>
+	<li>list</li>
+	<li>list</li>
+	<li>list</li>
+	</ul>
+	Поменяйте содержимое списка на текс list их порядковый номер в коде.</h3>
+	<button onclick="task3 ()">Выполнить</button>
+
+	<h3>Задание № 3 <br> Калькулятор <br> <input id="fir" type="text"> <span>?</span> <input id="sec" type="text"> = <span>результат</span><br>
+	<button>+</button> 
+	<button>-</button> 
+	<button>*</button> 
+	<button>/</button> </h3>
+	<button onclick="task4 ()">Выполнить</button>
+
+	<script>
+		function task1() {
+			var i = document.getElementById("hello");
+			i.innerHTML = "Привет";
+		}
+
+		function task2() {
+			var h3 = document.createElement("h3");
+			var b = document.getElementById("b");
+			h3.innerHTML = "Hello";
+			div.replaceChild(h3, b);
+		}  
+
+		function task3 () {
+			var elements = document.querySelectorAll('ul > li');
+			for (var i = 0; i < elements.length; i++) {
+				var j = i + 1;
+				elements[i].innerHTML = 'list ' + j;
+			}
+		}
+
+		function task4() {
+			var first = document.getElementById("fir");
+			var second = document.getElementById("sec");
+			console.log (first)
+		}
+
+	</script>
+
+</body>
+</html>
